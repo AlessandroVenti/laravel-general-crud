@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('home', 'MatchController@homeFunction');
+
+Route::get('/match/{id}', 'MatchController@singleMatchFunction')->name('singleMatch');

@@ -1,6 +1,14 @@
 @extends('layouts.main-layout')
 @section('content')
      <main>
-         <h1>i'm the main</h1>
+         <ul>
+              @foreach ($matches as $match)
+                  <li>
+                       <a href="{{ route('singleMatch', $match -> id )}}">
+                         {{ $match -> team1 }} VS {{ $match -> team2 }}
+                       </a>
+                  </li>
+              @endforeach
+         </ul>
      </main>
 @endsection
