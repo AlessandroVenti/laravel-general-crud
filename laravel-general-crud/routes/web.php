@@ -17,6 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('home', 'MatchController@homeFunction');
+Route::get('home', 'MatchController@homeFunction')->name('home');
 
 Route::get('/match/{id}', 'MatchController@singleMatchFunction')->name('singleMatch');
+
+Route::get('/addMatch', 'MatchController@createMatchFunction')->name('createMatch');
+
+Route::post('/addMatch/storeMatch', 'MatchController@storeMatchFunction')->name('storeMatch');
+
+Route::get('/editMatch{id}', 'MatchController@editMatchFunction')->name('editMatch');
+
+Route::post('/updateMatch/{id}', 'MatchController@updateMatchFunction')->name('updateMatch');
+
+Route::get('deleteMatch/{id}', 'MatchController@deleteMatchFunction')->name('deleteMatch');
